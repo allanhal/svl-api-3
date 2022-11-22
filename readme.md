@@ -22,5 +22,13 @@
 
 9 - Configurar a base no mongo (Atlas)
 
+# Config o Banco de Dados(MongoDB)
+
+## Criar o arquivo de conexão usando o mongoose
+
+### Criar uma pasta config na raiz com o arquivo db.js
+
+
+
 
 
