@@ -29,6 +29,66 @@
 ### Criar uma pasta config na raiz com o arquivo db.js
 
 
+# Configuração do Banco (Mongo Atlas)
+
+1 - Entrar no Mongo DB Atlas 
+ 
+ - O Mongo Db Atlas é um banco de dados na nuvem (cloud) não relacional que usa o conceito de documentos e não de tabelas.
+ -  No banco de dados não relacional usamos as collections que são semelhantes as tabelas do banco relacional. As collections são em formato JSON.
+
+
+ 2 - Passo a passo para criar o banco de dados no Mongo Atlas.
+
+  - New project
+  - Create Database
+  - Nome do projeto
+  - Passo a passo da criação de um Cluster, no caso escolhe o Free
+  - Provedor do Cluster (AWS, Google Cloud, Azure, etc...)  
+  - Escolher a região, no caso São Paulo.
+  - Escolher o Cluster Name, no caso do nosso projeto o Cluster Name é o svl-db
+  - Create Cluster
+  - Configuração  user/password
+    - user: fs01
+    - password: fs01
+  - create user  
+  - IP do banco de dados
+  -  add my current ip address
+  - Finish and close
+  - Go to database
+
+  - Browse Collections : Listar os bancos de dados deste Cluster
+  - add my own data
+
+  - Database Collection
+
+  - {
+    "id" : gerado automaticamente,
+    "titulo" : "titulo 01",
+    "ano" : 2015,
+    "autor" :  "autor 01",
+    "editora" : "editora 01",
+    "numeroPag" : 125
+  }
+
+  - Criar a pasta /config e dentro dela o arquivo db.js
+
+  - Importar o mongoose ---  mongoose.connect()
+
+
+  - No Mongo Atlas 
+    - Databases
+    - Connect -> Mongo Db native drivers
+    - copiar a string de conexão Ex: mongodb+srv://fs01:<password>@svl-db.lnj91aw.mongodb.net/?retryWrites=true&w=majority
+
+    - Importar o arquivo db.js no server.js
+
+
+
+
+
+
+
+
 
 
 
