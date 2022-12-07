@@ -83,6 +83,13 @@
     - Importar o arquivo db.js no server.js
 
 
+    CRIANDO AS ROTAS
+
+     1 - Criar uma pasta na raiz  /controllers
+
+     2 - Criar o arquivo LivroController.js
+
+
 
 
 
