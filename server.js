@@ -3,7 +3,7 @@ const app = express()
 
 const { Model } = require('mongoose')
 const db = require('./config/db')
-const livros = require('./model/livros')
+const livros = require('./model/livros.js')
 
 const routes = require('./routes/index.js')
 routes(app)
