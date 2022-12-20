@@ -15,10 +15,12 @@ class LivroController {
         const id = req.params.id
         livros.findById(id, (err, livros) => {
             //tratar o erro ou o sucesso, baseado na função de callback utilizando os parametros err, livros
-            
+
             if (err) {
-                res.status(404).send({message: 'Livro não encontrado', 
-                erro: err.message })
+                res.status(404).send({
+                    message: 'Livro não encontrado',
+                    erro: err.message
+                })
             } else {
                 res.status(200).json(livros)
             }
@@ -29,30 +31,49 @@ class LivroController {
         let livro = new livros(req.body)
 
         livro.save(err => {
-                if (err) {
-                    res.status(500).send(
-                        {message: 'Erro ao salvar o livro', 
+            if (err) {
+                res.status(500).send(
+                    {
+                        message: 'Erro ao salvar o livro',
                         error: err.message
                     })
-                } else {
-                    res.status(201).send(livro.toJSON())
-                }
+            } else {
+                res.status(201).send(livro.toJSON())
+            }
         })
     }
 
     static deleteBook = (req, res) => {
         const id = req.params.id
-        livros.findByIdAndDelete(id, (err, livros) => {
+        livros.findByIdAndDelete(id, (err) => {
             //tratar o erro ou o sucesso, baseado na função de callback utilizando os parametros err, livros
-            
+
             if (err) {
-                res.status(404).send({message: 'Livro não encontrado', 
-                erro: err.message })
+                console.log('1')
+                res.status(404).send({
+                    message: 'Livro não encontrado',
+                    erro: err.message
+                })
             } else {
-                res.status(200).json(livros)
+                console.log('2')
+                res.status(200).send({message: 'O livro foi deletado'})
             }
         })
     }
+        static updateBook = (req, res) => {
+            let id = req.params.id
+
+            livros.findByIdAndUpdate(id, {$set: req.body}, (err) => {
+                if (err) {
+                    res.status(404).send({
+                        message: 'Não foi possível atualizar.'
+                    })
+                } else {
+                    res.status(200).send({message:'O livro foi atualizado'})
+                }
+            })
+        }
 }
 
 module.exports = LivroController
+
