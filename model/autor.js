@@ -8,6 +8,6 @@ const autorSchema = new mongoose.Schema({
     idade: {type: Number}
 })
 
-const autor = mongoose.Model('autores', autorSchema)
+const autor = mongoose.model('autores', autorSchema)
 
 module.exports = autor

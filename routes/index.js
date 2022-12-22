@@ -1,5 +1,6 @@
 const express = require('express')
 const livros = require('./livrosRoutes')
+const autores = require('./autoresRoutes')
 
 const routes = (app) => {
     app.use(
@@ -8,7 +9,7 @@ const routes = (app) => {
         })
     )
     app.use(
-        express.json(), livros)
+        express.json(), livros, autores)
 }
 
 module.exports = routes

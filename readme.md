@@ -89,6 +89,16 @@
 
      2 - Criar o arquivo LivroController.js
 
+     CRIANDO UMA NOVA ENTIDADE/MODEL COM O CRUD
+
+     1 - Criar o arquivo Autor.js em /model
+     2 - Criiar o arquivo AutorController.js em / controller
+     3 - Criar o arquivo autorRoutes.js em /routes
+     4 - Adicionar a rota no index.js em /routes
+     5 - Testar as rotas no Postman
+
+
+
 
 
 
