@@ -4,9 +4,11 @@ const livros = require('../model/livros')
 //O que é uma classe? 
 class LivroController {
 
-    // O que é o static?
+    // O que é o static? é uma forma de declarar um variável
     static findAllBooks = (req, res) => {
-        livros.find((err, livros) => {
+        livros.find()
+        .populate('autores')
+        .exec((err, livros) => {
             res.status(200).json(livros)
         })
     }
