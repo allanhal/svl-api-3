@@ -25,7 +25,7 @@ class LivroController {
                 })
             } else {
                 res.status(200).json(livros)
-            }
+            }npm
         })
     }
 

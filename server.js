@@ -13,7 +13,7 @@ db.once('open', () => {
     console.log('Conexão realizada com sucesso')
 })
 
-const port = 5000
+const port = 10000
 
 app.get('/', function (req, res) {
     res.send('Servidor Subiu');
