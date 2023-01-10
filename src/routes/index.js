@@ -1,6 +1,6 @@
 const express = require('express')
-const livros = require('./livrosRoutes')
-const autores = require('./autoresRoutes')
+const livros = require('./livro.route')
+const autores = require('./autor.route')
 
 const routes = (app) => {
     app.use(
